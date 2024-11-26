@@ -1,0 +1,35 @@
+<div class="h-screen w-screen overflow-hidden flex justify-center items-center">
+
+    <form [formGroup]="updateform" (ngSubmit)="update()">
+        <div class="shadow-2xl bg-white grid grid-rows-5 gap-4 px-10 py-10 rounded-lg border-slate-700 border-solid">
+
+            <h3
+                class="flex justify-center items-center text-center text-blue-400 text-3xl fontbold leading-none tracking-tight ">
+                CREATE TASK
+            </h3>
+
+            <input
+                class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block p-1  "
+                type="text" name="Taskname" placeholder="Enter the  new Taskname" formControlName="name">
+
+            <input
+                class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block p-1  "
+                type="text" name="desc" placeholder="Enter new Description" formControlName="description">
+
+            <input
+                class=" placeholder:text-gray-300 bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block p-1  "
+                type="date" name="duetime" placeholder="Enter the new Due Time" formControlName="duetime">
+
+            <input
+                class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block p-1  "
+                type="number" name="priority" placeholder="Enter the  new Priorty" formControlName="priority">
+
+            <button
+                class="bg-blue-500 text-white block w-56 p-1 rounded hover:bg-blue-600 hover:shadow-md hover:shadow-blue-400 active:bg-sky-300 disabled:bg-gray-400 disabled:opacity-70"
+                type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">SAVE CHANGES</button>
+
+
+        </div>
+    </form>
+
+</div>

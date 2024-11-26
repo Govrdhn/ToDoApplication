@@ -1,0 +1,86 @@
+ <div class="h-screen w-screen overflow-hidden flex justify-center items-center">
+
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <div class="shadow-2xl bg-white grid grid-rows-5 gap-4 px-10 py-10 rounded-lg bor border-solid">
+      <h1
+        class="flex justify-center items-center text-center text-blue-400 text-4xl font-extrabold leading-none tracking-tight ">
+        LOG IN</h1>
+
+
+      <input
+        class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-56 p-1 h-12 font-medium font-sans text-slate-900"
+        type="mail" name="mail" placeholder="Email id" formControlName="email">
+
+
+      <input
+        class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-56 p-1 h-12 font-medium font-sans text-slate-900"
+        type="password" name="password" placeholder="Password" formControlName="password">
+
+      <button type="submit" [disabled]="!userForm.valid"
+        class="bg-blue-500 block w-56 p-1 h-12 font-medium font-sans text-slate-900 rounded hover:bg-blue-600 hover:shadow-md hover:shadow-blue-400 active:bg-sky-300 disabled:bg-gray-400 disabled:opacity-70">LOG
+        IN</button>
+
+
+
+      <u class="flex justify-center items-center text-center text-gray-400" routerLink="/register">Dont have an
+        account?SignUp</u>
+
+    </div>
+
+  </form>
+
+</div>
+<!--<div class="fixed bg-purple-900 h-screen w-44 z-30 grid grid-rows-12 pt-6 pb-5 gap-1">
+  <div class="row-start-3 bg-purple-300 text-lg font-semibold p-3 items-center flex">Dash board</div>
+
+  <div class="row-start-4 text-lg font-semibold p-3 items-center flex">Organisations</div>
+  <div class="row-start-5 text-lg font-semibold p-3 items-center flex">Sent Forms</div>
+  <div class="row-start-6 text-lg font-semibold p-3 items-center flex">Drafts</div>
+  <div class="row-start-11 text-lg font-semibold p-3 items-center flex">Settings</div>
+  <div class="row-start-12 text-lg font-semibold p-3 items-center flex">About</div>
+</div>
+<div class="h-screen bg-purple-50 flex flex-col">
+  <div
+    class="fixed h-24 w-full flex items-center p-3 justify-center bg-purple-900 font-bold ml-44 text-4xl text-purple-200">
+     <div class=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">
+      <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+      </svg></div> 
+    FORMS
+  </div>
+  <div
+    class="mt-24 p-1 ml-44 rounded-xl grid grid-rows-4 grid-cols-12 gap-1 bg-gradient-to-tr from-purple-400 to-purple-200 h-36 w-full ">
+    <div
+      class="col-span-12  rounded-xl flex items-center justify-start p-1  font-bold font-sans text-xl text-slate-900">
+      Organistaion Name</div>
+    <div
+      class="col-span-12  rounded-xl flex items-center justify-start p-1  font-semibold font-sans text-lg text-slate-900">
+      Form Name</div>
+    <div class="col-span-12  rounded-xl flex items-center justify-start p-1  font-medium font-sans text-slate-900">
+      12:00</div>
+    <div class="col-span-1  rounded-xl flex items-center justify-start p-1  font-medium font-sans text-slate-900">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" class="size-7">
+        <path fill-rule="evenodd"
+          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="col-span-1 rounded-xl flex items-center justify-start p-1 font-medium font-sans text-slate-900">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-7">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+
+    </div>
+    <div
+      class="col-start-4 col-span-full  rounded-xl flex items-center justify-end p-1 font-medium font-sans text-slate-900">
+      Start Filling
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-7">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+
+    </div>
+  </div>
+</div>-->

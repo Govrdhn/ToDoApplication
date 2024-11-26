@@ -1,0 +1,44 @@
+<div class="h-screen w-screen overflow-hidden flex justify-center items-center">
+
+  <form [formGroup]="regForm" (ngSubmit)="submitreg()">
+    <div class="shadow-2xl bg-white grid grid-rows-5 gap-4 px-10 py-10 rounded-lg border-slate-700 border-solid">
+      <h1
+        class="flex justify-center items-center text-center text-blue-400 text-4xl font-extrabold leading-none tracking-tight ">
+        SIGN UP</h1>
+
+
+        <input
+        class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-56 p-1"
+        type="text" name="username" placeholder="Enter username" formControlName="rname">
+  
+
+      <input
+        class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-56 p-1"
+        type="mail" name="mail" placeholder="Email id" formControlName="remail">
+
+
+      <input
+        class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-56 p-1"
+        type="password" name="password" placeholder="Password" formControlName="rpassword">
+
+        <input
+        class="bg-gray-50 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-56 p-1"
+        type="password" name="Confirmpassword" placeholder="Re-Enter the password">
+
+
+      <button type="submit" [disabled]="!regForm.valid"
+        class="bg-blue-500 text-white block w-56 p-1 rounded hover:bg-blue-600 hover:shadow-md hover:shadow-blue-400 active:bg-sky-300 disabled:bg-gray-400 disabled:opacity-70">SIGN UP
+        </button>
+
+
+
+        <u class="flex justify-center items-center text-center text-gray-400" routerLink="/login">Already have an
+          account?SignIn</u>
+  
+    </div>
+
+  </form>
+
+</div>
+
+<router-outlet></router-outlet>
