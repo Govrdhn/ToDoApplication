@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { createClient, SupabaseClient, User, } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { from, Observable } from 'rxjs';
 
 
@@ -19,15 +19,11 @@ export class SupabaseService {
     this.supabase = createClient('', '');
   }
 
-
-
   async register(email: string, password: string) {
     console.log(this.supabase)
     let res = await this.supabase.auth.signUp({ "email": email, "password": password });
     return res;
   }
-
-
 
   async login(email: string, password: string) {
     let ress = await this.supabase.auth.signInWithPassword({ email, password });
@@ -79,20 +75,3 @@ export class SupabaseService {
 
   }
 }
-
-
-
-
-
-/*async register( name:string, email: string, password: string) {
-      const { data, error } = await this.supabase
-      .from('users')
-      .insert([{name, email,password}]);
-      if(error){
-        console.log(error)
-        throw error;
-      }
-      console.log(data)
-      return data;
-    }
- */
