@@ -25,7 +25,7 @@ export class NewtasktableComponent {
     if (this.taskform.valid) {
       console.log(this.taskform.value);
 
-      this.createtask.submittask(this.taskform.value.name, this.taskform.value.description, this.taskform.value.duetime, this.taskform.value.priority, localStorage.getItem('user_id'))
+      this.createtask.submittask(this.taskform.value.name, this.taskform.value.description, this.taskform.value.duetime, this.taskform.value.priority, localStorage.getItem('USER_ID'))
         .then((res: any) => {
           console.log(res);
           if (res === 'noerror') this.router.navigateByUrl('/tasklist');

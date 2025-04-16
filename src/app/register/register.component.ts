@@ -12,7 +12,6 @@ export class RegisterComponent {
 
   constructor(private regbulider: FormBuilder, private auth: SupabaseService) {
     this.regForm = this.regbulider.group({
-      rname: ['', Validators.required],
       remail: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
       rpassword: ['', Validators.required]
     }); 

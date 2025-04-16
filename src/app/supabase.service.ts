@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient, User, } from '@supabase/supabase-js';
 import { from, Observable } from 'rxjs';
+import { environment } from '../environments/environment.development';
 
 
 export interface Profile {
@@ -16,14 +17,13 @@ export class SupabaseService {
   private supabase: SupabaseClient;
 
   constructor() {
-    this.supabase = createClient('', '');
+    this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
   }
 
 
 
-  async register(email: string, password: string) {
-    console.log(this.supabase)
-    let res = await this.supabase.auth.signUp({ "email": email, "password": password });
+  register(email: string, password: string) {
+    let res = this.supabase.auth.signUp({ email: email, password: password });
     return res;
   }
 
@@ -31,7 +31,6 @@ export class SupabaseService {
 
   async login(email: string, password: string) {
     let ress = await this.supabase.auth.signInWithPassword({ email, password });
-    console.log(ress)
     return ress;
   }
 
@@ -40,7 +39,7 @@ export class SupabaseService {
       .from('tasks')
       .insert({ name: name, description: desc, duetime: duetime, priority: priority, userid: user })
     if (error) {
-      console.log('error occured!')
+      console.error(error)
       return 'err';
     }
     else return 'noerror';
@@ -79,20 +78,3 @@ export class SupabaseService {
 
   }
 }
-
-
-
-
-
-/*async register( name:string, email: string, password: string) {
-      const { data, error } = await this.supabase
-      .from('users')
-      .insert([{name, email,password}]);
-      if(error){
-        console.log(error)
-        throw error;
-      }
-      console.log(data)
-      return data;
-    }
- */
